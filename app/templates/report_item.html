@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Report Lost Item</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.item_name.label }}
+        {{ form.item_name(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.description.label }}
+        {{ form.description(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.location.label }}
+        {{ form.location(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.date_lost.label }}
+        {{ form.date_lost(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.contact_info.label }}
+        {{ form.contact_info(class="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</form>
+{% endblock %}

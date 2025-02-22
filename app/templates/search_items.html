@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Search Results</h1>
+{% if results %}
+    <ul>
+        {% for item in results %}
+        <li>
+            <a href="{{ url_for('item_details', item_id=item.id) }}">{{ item.item_name }}</a> - {{ item.location }}
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No items found.</p>
+{% endif %}
+{% endblock %}
